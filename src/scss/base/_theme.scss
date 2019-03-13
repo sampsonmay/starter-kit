@@ -1,0 +1,15 @@
+// Theme
+// colours and background colours etc...
+// -----------------------------------------------
+
+
+// Selection
+// ----------------------------
+::selection {
+    color: white;
+    background-color: blue;
+}
+::-moz-selection {
+    color: white;
+    background: white;
+}

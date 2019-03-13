@@ -1,0 +1,69 @@
+// Typography
+// all important typography styles (headings, paragraphs, links, etc..)
+// -----------------------------------------------
+
+
+// Headings
+// ----------------------------
+h1, h2, h3, h4, h5, h6, pre {
+    color: inherit;
+    @include font-size();
+    text-rendering: optimizeLegibility;
+
+    a {
+        color: inherit;
+
+    }
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    a {
+        color: inherit;
+
+    }
+}
+
+
+// Links
+// ----------------------------
+a {
+    color: inherit;
+
+}
+
+
+// Paragraphs
+// ----------------------------
+p {
+    margin: 0 0 em(20);
+
+    &:last-child {
+        margin-bottom: 0;
+
+    }
+}
+
+
+// Lists
+// ----------------------------
+ul, ol {
+    list-style: none;
+
+}
+
+
+// Subscript / Superscript
+// ----------------------------
+sub, sup {
+    font-size: 0.65em;
+    position: relative;
+
+}
+sub {
+    transform: translateY(90%);
+
+}
+sup {
+    transform: translateY(-90%);
+
+}
