@@ -2,7 +2,7 @@
     "name": "Project",
     "version": "1.0.0",
     "description": "",
-    "license": "MIT-test",
+    "license": "MIT",
     "private": true,
     "scripts": {
         "watch": "webpack --watch",
