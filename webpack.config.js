@@ -2,11 +2,8 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 
-const smp = new SpeedMeasurePlugin();
-
-module.exports = smp.wrap({
+module.exports = {
     mode: 'development',
     entry: './src/js/index',
     devServer: {
@@ -14,10 +11,22 @@ module.exports = smp.wrap({
         watchContentBase: true
     },
     module: {
-        rules: [{
-            test: /\.scss$/,
-            use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader", "sass-bulk-import-loader"]
-        }]
+        rules: [
+            {
+                test: /\.js$/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                },
+                exclude: /node_modules/
+            },
+            {
+                test: /\.scss$/,
+                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader", "sass-bulk-import-loader"]
+            }
+        ]
     },
     optimization: {
         minimizer: [
@@ -41,4 +50,4 @@ module.exports = smp.wrap({
         path: path.resolve(__dirname, 'assets'),
         publicPath: '/assets/'
     }
-});
+};
