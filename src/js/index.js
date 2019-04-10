@@ -10,7 +10,9 @@ var SiteName = (function () {
     Example();
     
     window.addEventListener("load", function(event) {
-        var Observer = new IntersectionObserver;
+        var Observer = new IntersectionObserver({
+            elements: '[data-animate]'
+        });
     });
 
 })();

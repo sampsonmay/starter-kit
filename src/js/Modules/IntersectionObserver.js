@@ -1,9 +1,11 @@
 class Observer {
-    constructor() {
-        this.items = document.querySelectorAll("[data-animate]");
-        
-        if( !this.items.length > 0 ) return;
+    
+    constructor(...args) {
+        let opts = args[0];
 
+        this.elements = document.querySelectorAll(opts.elements) || null;
+        if( !this.elements.length > 0 || null == this.elements ) return;
+                
         if (!('IntersectionObserver' in window)) {
             this.DoObservered();
         } else {
@@ -11,12 +13,22 @@ class Observer {
         }
     }
 
+
+    /**
+     * @method DoObserver
+     * @description Complete the animations on page load without the IntersectionObserver (Not supported)
+     */
     DoObservered() {
 
         // Fallback for the browsers that don't support IntersectionObserver
 
     }
 
+
+    /**
+     * @method StartObserving
+     * @description 
+     */
     StartObserving() {
         let observer = new IntersectionObserver(function(entries, self) {
             entries.forEach(function(entry) {
@@ -33,8 +45,8 @@ class Observer {
                 }
             });
         });
-        this.items.forEach(function(item) {
-            observer.observe(item);
+        this.elements.forEach(function(el) {
+            observer.observe(el);
         });
     }
 }
