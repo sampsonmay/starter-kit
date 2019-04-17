@@ -10,6 +10,7 @@ module.exports = {
         publicPath: '/assets/',
         watchContentBase: true
     },
+    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -25,7 +26,20 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader", "sass-bulk-import-loader"]
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader", options: {
+                            sourceMap: true
+                        },
+                    },
+                    "postcss-loader",
+                    {
+                        loader: "sass-loader", options: {
+                            sourceMap: true
+                        }
+                    },
+                    "sass-bulk-import-loader"]
             }
         ]
     },
