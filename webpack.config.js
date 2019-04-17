@@ -33,13 +33,18 @@ module.exports = {
                             sourceMap: true
                         },
                     },
-                    "postcss-loader",
+                    {
+                        loader: "postcss-loader", options: {
+                            sourceMap: true
+                        },
+                    },
                     {
                         loader: "sass-loader", options: {
                             sourceMap: true
                         }
                     },
-                    "sass-bulk-import-loader"]
+                    "sass-bulk-import-loader"
+                ]
             }
         ]
     },
