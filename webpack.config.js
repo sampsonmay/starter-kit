@@ -10,7 +10,7 @@ module.exports = {
         publicPath: '/assets/',
         watchContentBase: true
     },
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
     module: {
         rules: [
             {
