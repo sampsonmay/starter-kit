@@ -1,58 +1,55 @@
-import 'whatwg-fetch';
 import Tabs from './Tabs';
-import Filter from './Filter'; 
+import Filter from './Filter';
 import Pagination from './Pagination';
+import IO from "./IO";
 
 const Response = () => {
     
-    const domParser = new DOMParser();
     const response = "[data-response]";
     const responseEl = document.querySelector(response);
 
-    if( !responseEl )
-        return;
+    // The page must contain a response container ("[data-response]") for this module to run
+    if(!responseEl) return;
 
+    // Define additional variabes once we know the response container exists
+    const domParser = new DOMParser();
     const isLoadingClass = "is-loading";
+    let query = "?";
 
+    // Create the default objects for all elements that can have an effect on the response
     let options = {
         filter: {},
-        tab: {}
+        tab: {},
+        page: {}
     };
 
-    let query = "?";
-    
-    // Fetch Rsults
-    const fetchResponse = (type, value, uri, page) => {
-        
-        // Loading
+    /**
+     * Fetch Results Callback
+     * 
+     * @param {string} type 
+     * @param {string} value 
+     * @param {string} uri 
+     * @param {int} page
+     */
+    const fetchResponse = (type, value, uri) => {
+
+        // Apply a loading class to the response container
         responseEl.classList.add(isLoadingClass)
 
-        // Create object
-        options[type] = {
-            uri,
-            value
-        };
-
         // Reset query
         query = "?request";
 
-        // Reset query
-        query = "?request";
+        // Update the object with the selection and value
+        options[type][uri] = value;
 
-        if( page ) {
-            query += "&page="+page
-        }
-        else 
-        {
-            options[type][uri] = value;
-        }
-        
-        // Loop through object to buildup query string
+        // Loop through object to build query string
         for (var option in options) {
             if( options.hasOwnProperty(option) ) {
                 let objOption = options[option];
-                if( objOption.uri && objOption.value ) {
-                    query += '&' + objOption.uri + '=' + objOption.value;
+                for (var o in objOption) {
+                    if( o && objOption[o] ) {
+                        query += '&' + o + '=' + objOption[o];
+                    }
                 }
             }
         }
@@ -68,14 +65,19 @@ const Response = () => {
             var results = domParser.parseFromString(text, "text/html");
                 results = results.querySelector("[data-response]");
 
-            if( results.querySelectorAll("div").length > 0 ) {
+            if( results.querySelectorAll("div:not([data-animate])").length > 0 ) {
 
                 responseEl.innerHTML = results.innerHTML;
+
                 Pagination(fetchResponse);
+                
+                var Observer = new IO({
+                    elements: '[data-animate]'
+                });
 
             } else {
                 
-                responseEl.innerHTML = "No results";
+                responseEl.innerHTML = "<p class=\"standfirst\">There doesn't seem to be any results that match your filter(s)</p>";
 
             }
 
@@ -95,6 +97,6 @@ const Response = () => {
     Filter(fetchResponse);
     Pagination(fetchResponse);
 
-};
+}
 
 export default Response;

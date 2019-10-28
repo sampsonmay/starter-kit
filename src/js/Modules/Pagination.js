@@ -11,14 +11,15 @@ const Pagination = ( responseCallback ) => {
         e.preventDefault();
 
         let target = e.currentTarget;
-        let page = target.dataset.page;
+        let value = target.dataset.value;
+        let uri = target.dataset.uri;
                         
-        responseCallback("pagination", null, null, page);
+        responseCallback("page", value, uri);
         
     }
 
 
-    // Bind
+    // EVENTS
     pages.forEach(page => {
         page.addEventListener("click", handleClick)
     });

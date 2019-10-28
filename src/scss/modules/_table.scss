@@ -1,0 +1,43 @@
+.table {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    overflow-x: auto;
+    width: 100%;
+
+    table {
+        margin-top: 0;
+        min-width: 620px;
+
+    }
+}
+
+table {
+    border: 0;
+    border-bottom: 1px solid rgba( black,0.3 );
+    border-top: 1px solid rgba( black,0.3 );
+    border-spacing: 0;
+    @include font-size( 14,18 );
+    margin-top: 30px;
+    width: 100%;
+
+}
+
+table tr:nth-child(even) {
+    th, td {
+        background-color: #EEE;
+    }
+}
+
+table tr th,
+table tr td {
+    border: 0;
+    padding: 1rem 1.5rem;
+    text-align: left;
+
+}
+
+table tfoot {
+    @include font-size( 12,18 );
+    padding: 2rem 0;
+
+}

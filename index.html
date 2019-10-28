@@ -32,8 +32,62 @@
 
 </head>
 <body>
+    
     <div class="wrapper">
-        <p>SM starter-kit</p>
+
+        <!-- Tabs | Filters | Pagination -->
+        <div data-response class="is-loading"></div>
+
+        
+        <!-- Tabs | /js/Modules/Tabs.js | /scss/modules/_tabs.scss -->
+        <div class="tabs" data-tabs>
+            <ul>
+                <li><a data-value="Tab1" data-uri="category" href="?category=Tab1">Tab 1</a></li>
+                <li><a data-value="Tab2" data-uri="category" href="?category=Tab2" class="is-active">Tab 2</a></li>
+                <li><a data-value="Tab3" data-uri="category" href="?category=Tab3">Tab 3</a></li>
+                <li><a data-value="Tab4" data-uri="category" href="?category=Tab4">Tab 4</a></li>
+            </ul>
+        </div>
+
+
+        <!-- Filters | /js/Modules/Filters.js | /scss/modules/_filter.scss -->
+        <div class="filters">
+            <div class="filter" data-filter>
+                <div class="filter__selected" data-filter-selected>
+                    <span>2019</span>
+                </div>
+                <ul>
+                    <li><a data-value="2019" data-uri="year" href="?year=2019" class="is-active">2019</a></li>
+                    <li><a data-value="2018" data-uri="year" href="?year=2018">2018</a></li>
+                    <li><a data-value="2017" data-uri="year" href="?year=2018">2017</a></li>
+                </ul>
+            </div>
+            <div class="filter" data-filter>
+                <div class="filter__selected" data-filter-selected>
+                    <span>New York</span>
+                </div>
+                <ul>
+                    <li><a data-value="New York" data-uri="location" href="?location=NewYork" class="is-active">New York</a></li>
+                    <li><a data-value="London" data-uri="location" href="?location=London">London</a></li>
+                    <li><a data-value="Paris" data-uri="location" href="?location=Paris">Paris</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        
+        <!-- Pagination | /js/Modules/Filters.js | /scss/modules/_filter.scss -->
+        <div class="pagination" data-pagination>
+            <ul>
+                <li><a data-value="1" class="pagination__arrow pagination__arrow--previous is-disabled" href="?page=1">&lt;</a></li>
+                <li><a data-value="1" data-uri="page" href="?page=1" class="is-active">1</a></li>
+                <li><a data-value="2" data-uri="page" href="?page=2">2</a></li>
+                <li><a data-value="3" data-uri="page" href="?page=3">3</a></li>
+                <li><a data-value="4" data-uri="page" href="?page=4">4</a></li>
+                <li><a data-value="3" class="pagination__arrow pagination__arrow--next" href="?page=3">&gt;</a></li>
+            </ul>
+        </div>
+        
+
     </div>
 
     <script src="assets/js/bundle.js"></script>

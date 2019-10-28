@@ -1,4 +1,4 @@
-const Tabs = (callback) => {
+const Tabs = ( responseCallback ) => {
     
     const tabs = "[data-tabs]";
     const tabsEl = document.querySelector(tabs);
@@ -18,23 +18,21 @@ const Tabs = (callback) => {
         let value = target.dataset.value;
         let uri = target.dataset.uri;
 
-        if( target.classList.contains(activeClass) ) return;
-
         tabOptions.forEach(tab => {
             tab.classList.remove(activeClass);
         });
         target.classList.add(activeClass);
 
-        callback("tab", value, uri);
+        responseCallback("tab", value, uri);
 
-    };
+    }
 
 
     // Bind
     tabOptions.forEach(tab => {
         tab.addEventListener("click", handleTab);
-    });
-    
-};
+    })
+
+}
 
 export default Tabs;

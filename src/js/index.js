@@ -2,11 +2,12 @@
 import '../scss/style.scss';
 
 // JavaScript Modules
-import Carousels from './modules/Carousels';
+import Carousels from './Modules/Carousels';
 import Cookies from './Modules/Cookies';
-import Response from './modules/Response';
+import IO from './Modules/IO';
+import Response from './Modules/Response';
 import Tables from './Modules/Tables';
-import Video from './modules/Video';
+import Video from './Modules/Video';
 
 // Polyfills
 import PolyFills from './Utils/Polyfills';
