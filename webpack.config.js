@@ -5,7 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './src/js/index',
+    entry: ["@babel/polyfill", "./src/js/index"],
     devServer: {
         publicPath: '/assets/',
         watchContentBase: true
@@ -22,7 +22,7 @@ module.exports = {
                         plugins: ["@babel/plugin-transform-classes"]
                     }
                 },
-                exclude: /node_modules/
+                exclude: /node_modules\/(?!(swiper|dom7)\/).*/
             },
             {
                 test: /\.scss$/,
