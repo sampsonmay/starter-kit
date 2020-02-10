@@ -5,7 +5,11 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: ["@babel/polyfill", "./src/js/index"],
+    entry: {
+        main: ["@babel/polyfill", "./src/js/index"],
+        print: ["./src/scss/print.scss"],
+        pdf: ["./src/scss/pdf.scss"]
+    },
     devServer: {
         publicPath: '/assets/',
         watchContentBase: true
@@ -62,11 +66,12 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "./css/style.css"
+            filename: "./css/[name].min.css"
         })
     ],
     output: {
-        filename: './js/bundle.js',
+        filename: './js/[name].min.js',
+        chunkFilename: './js/[name].min.js',
         path: path.resolve(__dirname, 'assets'),
         publicPath: '/assets/'
     }
