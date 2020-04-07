@@ -10,13 +10,13 @@
         "build": "webpack --mode=production"
     },
     "devDependencies": {
-        "@babel/core": "^7.7.7",
-        "@babel/plugin-transform-classes": "^7.7.4",
-        "@babel/polyfill": "^7.7.0",
-        "@babel/preset-env": "^7.7.7",
-        "autoprefixer": "^9.7.3",
-        "babel-loader": "^8.0.6",
-        "css-loader": "^3.4.0",
+        "@babel/core": "^7.9.0",
+        "@babel/plugin-transform-classes": "^7.9.2",
+        "@babel/polyfill": "^7.8.7",
+        "@babel/preset-env": "^7.9.0",
+        "autoprefixer": "^9.7.6",
+        "babel-loader": "^8.1.0",
+        "css-loader": "^3.5.0",
         "lodash": "^4.17.15",
         "mini-css-extract-plugin": "^0.7.0",
         "node-sass": "^4.13.1",
@@ -26,9 +26,9 @@
         "sass-loader": "^7.3.1",
         "style-loader": "^0.23.1",
         "terser-webpack-plugin": "^1.4.3",
-        "webpack": "^4.41.4",
-        "webpack-cli": "^3.3.10",
-        "webpack-dev-server": "^3.10.1"
+        "webpack": "^4.42.1",
+        "webpack-cli": "^3.3.11",
+        "webpack-dev-server": "^3.10.3"
     },
     "dependencies": {
         "css-vars-ponyfill": "^2.1.2",
