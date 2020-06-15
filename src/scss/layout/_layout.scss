@@ -1,15 +1,11 @@
 // Container
-// ----------------------------
 .container {
     margin: 0 auto;
     width: 100%;
-
 }
 
-// Grid
-// ----------------------------
 
-// Row
+// Grid
 .row {
     display: flex;
     flex-flow: wrap;
@@ -18,7 +14,6 @@
 
 }
 
-// Column(s)
 [class^='col-'] {
     padding: 0 10px;
     width: 100%;
@@ -28,22 +23,18 @@
     .col-md-1 {
         flex: 0 0 16.666667%;
         max-width: 16.666667%;
-
     }
     .col-md-2 {
         flex: 0 0 33.33%;
         max-width: 33.33%;
-
     }
     .col-md-3 {
         flex: 0 0 50%;
         max-width: 50%;
-
     }
     .col-md-4 {
         flex: 0 0 66.666666%;;
         max-width: 66.666666%;
-
     }
     .col-md-5 {
         flex: 0 0 83.333333%;
@@ -56,79 +47,63 @@
     .col-lg-1 {
         flex: 0 0 8.333333%;
         max-width: 8.333333%;
-
     }
     .col-lg-2 {
         flex: 0 0 16.666667%;
         max-width: 16.666667%;
-
     }
     .col-lg-3 {
         flex: 0 0 25%;
         max-width: 25%;
-
     }
     .col-lg-4 {
         flex: 0 0 33.33%;
         max-width: 33.33%;
-
     }
     .col-lg-5 {
         flex: 0 0 41.666667%;
         max-width: 41.666667%;
-
     }
     .col-lg-6 {
         flex: 0 0 50%;
         max-width: 50%;
-
     }
     .col-lg-7 {
         flex: 0 0 58.333333%;
         max-width: 58.333333%;
-
     }
     .col-lg-8 {
         flex: 0 0 66.666666%;
         max-width: 66.666666%;
-
     }
     .col-lg-9 {
         flex: 0 0 75%;
         max-width: 75%;
-
     }
     .col-lg-10 {
         flex: 0 0 83.333333%;
         max-width: 83.333333%;
-
     }
     .col-lg-11 {
         flex: 0 0 83.333333%;
         max-width: 83.333333%;
-
     }
     .col-lg-12 {
         flex: 0 0 100%;
         max-width: 100%;
-
     }
 
     .offset-lg-1 {
         margin-left: 8.333333%;
-
     }
     .offset-lg-2 {
         margin-left: 16.666667%;
-
     }
     .offset-lg-3 {
         margin-left: 25%;
-
     }
     .offset-lg-6 {
         margin-left: 50%;
-
     }
 }
 
@@ -136,11 +111,9 @@
     .col-full-10 {
         flex: 0 0 83.333333%;
         max-width: 83.333333%;
-
     }
     
     .offset-full-1 {
         margin-left: 8.333333%;
-
     }
 }

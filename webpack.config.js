@@ -7,8 +7,7 @@ module.exports = {
     mode: 'development',
     entry: {
         main: ["@babel/polyfill", "./src/js/index"],
-        print: ["./src/scss/print.scss"],
-        pdf: ["./src/scss/pdf.scss"]
+        print: ["./src/scss/print.scss"]
     },
     devServer: {
         publicPath: '/assets/',

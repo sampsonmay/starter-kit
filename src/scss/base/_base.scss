@@ -3,7 +3,6 @@ html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
-    
 }
 
 body {
@@ -11,15 +10,11 @@ body {
     color: $default;
     font-family: $font;
     line-height: 1;
-
 }
 
 
 // Wrapper
-// ----------------------------
 .wrapper {
     @include font-size();
-    overflow: hidden;
     position: relative;
-
 }
