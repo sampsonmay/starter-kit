@@ -6,33 +6,3 @@
 .visually-hidden {
     @include visually-hidden();
 }
-
-
-// Positioning
-.relative {
-    position: relative;
-}
-
-.fixed {
-    position: fixed;
-}
-
-
-// Text alignment
-.text-align-center {
-    text-align: center;
-}
-
-.text-align-left {
-    text-align: left;
-}
-
-.text-align-right {
-    text-align: right;
-}
-
-
-// Text transform
-.text-upper {
-    text-transform: uppercase;
-}

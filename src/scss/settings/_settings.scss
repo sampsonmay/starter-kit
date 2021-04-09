@@ -17,10 +17,13 @@ $font: "Open Sans", Helvetica, Arial, sans-serif;
 $bp-sm: "min-width: 480px";
     $bp-sm-max: "max-width: 479px";
 
-$bp-md: "min-width: 720px";
-    $bp-md-max: "max-width: 719px";
+$bp-md: "min-width: 700px";
+    $bp-md-max: "max-width: 699px";
 
-$bp-lg: "min-width: 1150px";
-    $bp-lg-max: "max-width: 1149px";
+$bp-lg: "min-width: 1000px";
+    $bp-lg-max: "max-width: 999px";
 
-$bp-full: "min-width: 1440px";
+$bp-xl: "min-width: 1300px";
+    $bp-xl: "min-width: 1299px";
+
+$bp-max: "min-width: 1600px";

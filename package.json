@@ -1,5 +1,5 @@
 {
-    "name": "Project",
+    "name": "ProjectName",
     "version": "1.0.0",
     "description": "",
     "license": "MIT",
@@ -10,14 +10,13 @@
         "build": "webpack --mode=production"
     },
     "devDependencies": {
-        "@babel/core": "^7.13.14",
-        "@babel/plugin-transform-classes": "^7.13.0",
+        "@babel/core": "^7.12.3",
+        "@babel/plugin-transform-classes": "^7.12.1",
         "@babel/polyfill": "^7.12.1",
-        "@babel/preset-env": "^7.13.12",
+        "@babel/preset-env": "^7.12.1",
         "autoprefixer": "^9.8.6",
-        "babel-loader": "^8.2.2",
+        "babel-loader": "^8.1.0",
         "css-loader": "^3.6.0",
-        "lodash": "^4.17.21",
         "mini-css-extract-plugin": "^0.7.0",
         "node-sass": "^4.14.1",
         "optimize-css-assets-webpack-plugin": "^5.0.4",
@@ -26,14 +25,19 @@
         "sass-loader": "^7.3.1",
         "style-loader": "^0.23.1",
         "terser-webpack-plugin": "^1.4.5",
-        "webpack": "^4.46.0",
+        "webpack": "^4.44.2",
         "webpack-cli": "^3.3.12",
-        "webpack-dev-server": "^3.11.2"
+        "webpack-dev-server": "^3.11.0"
     },
     "dependencies": {
-        "css-vars-ponyfill": "^2.4.3",
+        "gsap": "^3.6.0",
+        "headroom.js": "^0.12.0",
+        "lodash": "^4.17.20",
+        "normalize.css": "^8.0.1",
+        "object-fit-images": "^3.2.4",
         "swiper": "^5.4.5",
-        "whatwg-fetch": "^3.6.2"
+        "url-search-params-polyfill": "^8.1.0",
+        "whatwg-fetch": "^3.4.1"
     },
     "browserslist": [
         "IE 11"

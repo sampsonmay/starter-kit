@@ -47,13 +47,14 @@ ul, ol {
 // Subscript / Superscript
 sub, sup {
     font-size: 0.65em;
+    line-height: 1;
     position: relative;
 }
 
 sub {
-    transform: translateY(90%);
+    transform: translateY(75%);
 }
 
 sup {
-    transform: translateY(-90%);
+    transform: translateY(-75%);
 }
