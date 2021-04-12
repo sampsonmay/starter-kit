@@ -7,7 +7,6 @@
     table {
         margin-top: 0;
         min-width: 620px;
-
     }
 }
 
@@ -19,7 +18,6 @@ table {
     @include font-size( 14,18 );
     margin-top: 30px;
     width: 100%;
-
 }
 
 table tr:nth-child(even) {
@@ -33,11 +31,9 @@ table tr td {
     border: 0;
     padding: 1rem 1.5rem;
     text-align: left;
-
 }
 
 table tfoot {
     @include font-size( 12,18 );
     padding: 2rem 0;
-
 }

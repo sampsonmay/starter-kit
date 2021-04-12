@@ -2,34 +2,19 @@ class Observer {
     
     constructor(...args) {
         let opts = args[0];
+        
+        this.elements = opts.elements || null;
 
-        this.elements = document.querySelectorAll(opts.elements) || null;
         if( !this.elements.length > 0 || null == this.elements ) return;
                 
         if (!('IntersectionObserver' in window)) {
-            this.DoObservered();
+            this.elements.forEach(opts.callback);
         } else {
-            this.StartObserving();
+            this.StartObserving(opts.callback);
         }
     }
 
-
-    /**
-     * @method DoObserver
-     * @description Complete the animations on page load without the IntersectionObserver (Not supported)
-     */
-    DoObservered() {
-
-        // Fallback for the browsers that don't support IntersectionObserver
-
-    }
-
-
-    /**
-     * @method StartObserving
-     * @description 
-     */
-    StartObserving() {
+    StartObserving(callback) {
         let observer = new IntersectionObserver(function(entries, self) {
             entries.forEach(function(entry) {
                 if(entry.isIntersecting) {
@@ -37,13 +22,15 @@ class Observer {
                     var el = entry.target;
 
                     // Do something with the element that is now being observed
-                    console.log("Element:", el);
+                    callback(el);
 
                     // Once the element has been "intersected", then we unobserve it.
-                    self.unobserve(el);
+                    observer.unobserve(el);
 
                 }
             });
+        }, {
+            rootMargin: '0px 0px -100px 0px'
         });
         this.elements.forEach(function(el) {
             observer.observe(el);

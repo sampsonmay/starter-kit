@@ -19,10 +19,4 @@ var SiteName = (function () {
     Carousels();
     Tables();
 
-    window.addEventListener("load", function(event) {
-        var Observer = new IO({
-            elements: '[data-animate]'
-        });
-    });
-
 })();

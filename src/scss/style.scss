@@ -2,7 +2,7 @@
 @import 'settings/*';
 
 // Critical
-@import "normalize.css/normalize.css";
+@import 'normalize.css/normalize';
 @import 'critical/webfonts';
 
 // Base
@@ -12,7 +12,7 @@
 @import 'layout/*';
 
 // Vendors
-@import 'swiper/src/swiper.scss';
+@import 'swiper/src/swiper';
 
 // Components
 @import 'components/*';
