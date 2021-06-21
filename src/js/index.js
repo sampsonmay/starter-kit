@@ -1,22 +1,28 @@
 // CSS Import
 import '../scss/style.scss';
 
+// Utils
+import Animations from './Utils/Animations';
+
 // JavaScript Modules
 import Carousels from './Modules/Carousels';
 import Cookies from './Modules/Cookies';
-import IO from './Modules/IO';
 import Tables from './Modules/Tables';
 
 // Polyfills
 import PolyFills from './Utils/Polyfills';
+import objectFitImages from 'object-fit-images';
+
 PolyFills();
+objectFitImages(); 
 
-var SiteName = (function () {
+var ProjectName = (function () {
 
-    console.log("Project Started...");
-
-    Cookies();  
     Carousels();
     Tables();
+    
+    Animations();
+
+    Cookies();
 
 })();

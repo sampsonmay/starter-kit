@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import IO from '../Utils/IO';
+import IO from './IntersectionObserver';
 
 gsap.registerPlugin(ScrollTrigger);
 
