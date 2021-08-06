@@ -1,18 +1,38 @@
 import Swiper from 'swiper';
+import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper/core';
+SwiperCore.use([Autoplay, Navigation, Pagination]);
+
+export function Example() {
+    const swipers = document.querySelectorAll("[data-swiper-example]");
+    if(!swipers.length) return;
+    swipers.forEach(x => {
+        const swiper = new Swiper(x, {
+            speed: 500,
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            watchOverflow: true,
+            breakpoints: {
+                768: {
+                    slidesPerView: 3,
+                    slidesPerGroup: 3
+                }
+            },
+            navigation: {
+                nextEl: x.querySelector('.swiper-button-next'),
+                prevEl: x.querySelector('.swiper-button-prev')
+            },
+            pagination: {
+                el: x.querySelector('.swiper-pagination'),
+                clickable: true
+            }
+        });
+    });
+}
+
 
 const Carousels = () => {
-    
-    var Carousel = new Swiper("[data-swiper-carousel]", {
-        slidesPerView: 1,
-        loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-        },
-        pagination: {
-            el: '.swiper-pagination'
-        }
-    });
 
+    Example();
+    
 }
 export default Carousels;

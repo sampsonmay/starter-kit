@@ -14,15 +14,18 @@ import PolyFills from './Utils/Polyfills';
 import objectFitImages from 'object-fit-images';
 
 PolyFills();
-objectFitImages(); 
+objectFitImages();
 
-var ProjectName = (function () {
+(function () {
 
+    // Visual
     Carousels();
     Tables();
     
-    Animations();
-
+    // Interact
     Cookies();
+
+    // Animation
+    Animations();
 
 })();

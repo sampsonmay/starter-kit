@@ -33,21 +33,17 @@ iframe, video {
     }
 }
 
+
 // Item
-.media__item {
+.media__item,
+.media__item > img {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-
-    img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        font-family: 'object-fit: cover;';
-    }
 }
-img.media__item {
+.media__item > img {
+    object-fit: cover;
     font-family: 'object-fit: cover;';
 }
