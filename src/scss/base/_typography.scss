@@ -2,6 +2,7 @@
 h1, h2, h3, h4, h5, h6, pre {
     color: inherit;
     @include font-size();
+    font-weight: normal;
     margin: 0;
     text-rendering: optimizeLegibility;
 
