@@ -1,6 +1,7 @@
-import Swiper from 'swiper';
-import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper/core';
-SwiperCore.use([Autoplay, Navigation, Pagination]);
+import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
+Swiper.use([Autoplay, Navigation, Pagination]);
+
+import 'swiper/css';
 
 export function Example() {
     const swipers = document.querySelectorAll("[data-swiper-example]");

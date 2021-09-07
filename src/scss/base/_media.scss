@@ -15,35 +15,44 @@ iframe, video {
     overflow: hidden;
     position: relative;
     width: 100%;
-    
-    &--16-9 {
-        padding-bottom: 56.25%;
+
+    &--1-1 {
+        padding-bottom: 100%;
     }
 
-    &--4-3 {
-        padding-bottom: 66.66%;
+    &--4-5 {
+        padding-bottom: 125%;
     }
 
     &--4-3 {
         padding-bottom: 75%;
     }
 
-    &--1-1 {
-        padding-bottom: 100%;
+    &--3-2 {
+        padding-bottom: 66.66%;
+    }
+
+    &--16-9 {
+        padding-bottom: 56.25%;
     }
 }
 
-
 // Item
-.media__item,
-.media__item > img {
+.media__item {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        font-family: 'object-fit: cover;';
+    }
 }
-.media__item > img {
+img.media__item {
     object-fit: cover;
     font-family: 'object-fit: cover;';
 }

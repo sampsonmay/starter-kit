@@ -2,11 +2,11 @@
 import '../scss/style.scss';
 
 // Utils
-import Animations from './Utils/Animations';
+// import Animations from './Utils/Animations';
 
 // JavaScript Modules
-import Carousels from './Modules/Carousels';
-import Cookies from './Modules/Cookies';
+// import Carousels from './Modules/Carousels';
+// import Cookies from './Modules/Cookies';
 import Tables from './Modules/Tables';
 
 // Polyfills
@@ -19,13 +19,13 @@ objectFitImages();
 (function () {
 
     // Visual
-    Carousels();
+    // Carousels();
     Tables();
     
     // Interact
-    Cookies();
+    // Cookies();
 
     // Animation
-    Animations();
+    // Animations();
 
 })();

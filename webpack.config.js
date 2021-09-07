@@ -1,77 +1,35 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: {
-        main: ["@babel/polyfill", "./src/js/index"],
-        print: ["./src/scss/print.scss"]
+    entry: "./src/js/index",
+    output: {
+        path: path.resolve(__dirname, 'assets'),
+        filename: './js/main.min.js',
     },
-    devServer: {
-        publicPath: '/assets/',
-        watchContentBase: true
-    },
-    devtool: 'inline-source-map',
     module: {
         rules: [
             {
-                test: /\.js$/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: ['@babel/preset-env'],
-                        plugins: ["@babel/plugin-transform-classes"]
-                    }
-                },
-                exclude: /node_modules\/(?!(swiper|dom7)\/).*/
-            },
-            {
-                test: /\.scss$/,
+                test: /\.s?css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    {
-                        loader: "css-loader", options: {
-                            sourceMap: true
-                        },
-                    },
-                    {
-                        loader: "postcss-loader", options: {
-                            sourceMap: true
-                        },
-                    },
-                    {
-                        loader: "sass-loader", options: {
-                            sourceMap: true
-                        }
-                    },
-                    "sass-bulk-import-loader"
-                ]
-            }
-        ]
+                    { loader: "css-loader", options: { sourceMap: true } },
+                    { loader: "sass-loader", options: { sourceMap: true } },
+                    "sass-bulk-import-loader" 
+                ],
+            },
+        ],
     },
     optimization: {
-        minimizer: [
-            new OptimizeCssAssetsPlugin({}),
-            new TerserPlugin({
-                terserOptions: {
-                    output: {
-                        comments: false
-                    },
-                }
-            })
-        ]
+        minimizer: [new CssMinimizerPlugin()],
     },
     plugins: [
         new MiniCssExtractPlugin({
             filename: "./css/[name].min.css"
-        })
+        }),
+        new TerserPlugin(),
     ],
-    output: {
-        filename: './js/[name].min.js',
-        chunkFilename: './js/[name].min.js',
-        path: path.resolve(__dirname, 'assets'),
-        publicPath: '/assets/'
-    }
 };

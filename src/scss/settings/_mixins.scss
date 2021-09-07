@@ -1,18 +1,21 @@
+@use 'sass:math';
+
 // Font Size (REM)
 // ----------------------------
 @mixin font-size($size: $base-font-size, $line-height: $base-line-height) {
-    $rem-size: $size / 10;
+    $rem-size: math.div($size,10);
     font-size: $size + px;
     font-size: $rem-size + rem;
     line-height: $line-height + px;
-    line-height: ($line-height / 10) + rem;
+    line-height: math.div($line-height,10) + rem;
 }
 
 
 // Spacing (EM)
 // ----------------------------
 @function em($pixels, $context: $base-font-size) {
-    @return #{$pixels/$context}em;
+    $val: math.div($pixels,$context);
+    @return #{$val}em;
 }
 
 
