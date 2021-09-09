@@ -3,31 +3,52 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function GSAPAnimations(el) {
+const batchEnter = (els, opts) => {
+    ScrollTrigger.batch(els, {
+        once: true,
+        start: 'top 80%',
+        onEnter: batch => gsap.from(batch, {
+            autoAlpha: 0,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 1,
+            ...opts
+        })
+    });
+}
 
-    // Batch trigger function for items that that need to animate in a staggered formation as they come into view
-    const batchTrigger = (batch, opts) => {
-        gsap.set(batch.children, opts);
-        ScrollTrigger.batch(batch.children, {
-            once: true,
-            onEnter: batch => gsap.to(batch, {
-                autoAlpha: 1,
-                stagger: 0.2,
-                duration: 0.75
-            }),
-            start: 'top 80%'
-        });
-    }
-    
-    // Batch
+export const initAnimations = () => {
+
     const batch = gsap.utils.toArray("[data-batch]");
     if(batch.length) {
         batch.forEach(x => {
-            batchTrigger(x, {
-                autoAlpha: 0
+            batchEnter(x.children, {
+                y: 100
             });
         });
     }
+
+    const blocks = gsap.utils.toArray('[data-block]');
+    blocks.forEach(x => {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: x,
+                start: 'top 80%',
+            }
+        }).from(x.children, {autoAlpha: 0, y: 75, duration: 1, stagger: 0.1})
+    });
+
+}
+
+export const callbackAnimations = (el) => {
+    
+    const items = el ? el.querySelectorAll(".item:not([style])") : document.querySelectorAll(".item");
+    if(items.length) {
+        batchEnter(items, {
+            x: 100
+        })
+    }
+
 }
 
 export default function Animations() {
@@ -35,7 +56,10 @@ export default function Animations() {
     // Check for reduced motion
     if(!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
 
+    // Animations that are set and won't be set again (Not included in callbacks)
+    initAnimations();
+
     // Watch for scroll triggers
-    GSAPAnimations();
+    callbackAnimations();
 
 }

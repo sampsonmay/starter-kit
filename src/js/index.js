@@ -6,7 +6,7 @@ import '../scss/style.scss';
 
 // JavaScript Modules
 // import Carousels from './Modules/Carousels';
-// import Cookies from './Modules/Cookies';
+import Cookies from './Modules/Cookies';
 import Tables from './Modules/Tables';
 
 // Polyfills
@@ -23,7 +23,7 @@ objectFitImages();
     Tables();
     
     // Interact
-    // Cookies();
+    Cookies();
 
     // Animation
     // Animations();

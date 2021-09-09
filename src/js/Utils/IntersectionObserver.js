@@ -39,3 +39,15 @@ class Observer {
 }
 
 export default Observer;
+
+
+// Example on how to use the IO
+
+// import IO from '../Utils/IntersectionObserver';
+// const elements = document.querySelectorAll("[data-observered]");
+// const Observer = new IntersectionObserver({
+//     elements: elements, 
+//     callback: function(el) {
+//          // Do something with each element that is now in view
+//     }
+// });

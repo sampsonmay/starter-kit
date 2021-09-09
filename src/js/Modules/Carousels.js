@@ -3,7 +3,7 @@ Swiper.use([Autoplay, Navigation, Pagination]);
 
 import 'swiper/css';
 
-export function Example() {
+export const Example = () => {
     const swipers = document.querySelectorAll("[data-swiper-example]");
     if(!swipers.length) return;
     swipers.forEach(x => {
