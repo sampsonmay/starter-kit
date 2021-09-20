@@ -11,16 +11,6 @@
 // Layout
 @import 'layout/*';
 
-// Components
-@import 'components/*';
-
-// Modules
-@import 'modules/*';
-
-// Pages
-@import 'pages/*';
-
-
 // Remove animations
 @media (prefers-reduced-motion) {
     *, *:before, *:after {

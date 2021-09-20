@@ -1,14 +1,18 @@
-const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
+const RemovePlugin = require('remove-files-webpack-plugin');
+const path = require('path');
 
 module.exports = {
     mode: 'development',
-    entry: "./src/js/index",
+    entry: {
+        "main": "./src/js/index",
+        "modules": "./src/js/modules"
+    },
     output: {
         path: path.resolve(__dirname, 'assets'),
-        filename: './js/main.min.js',
+        filename: 'js/[name].js'
     },
     module: {
         rules: [
@@ -24,12 +28,50 @@ module.exports = {
         ],
     },
     optimization: {
-        minimizer: [new CssMinimizerPlugin()],
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: "vendor",
+                    chunks: "initial",
+                },
+            },
+        },
+        minimizer: [
+            new CssMinimizerPlugin({
+                minimizerOptions: {
+                    preset: [
+                        "default",
+                        {
+                            discardComments: {
+                                removeAll: true
+                            },
+                        },
+                    ],
+                },
+            }),
+            new TerserPlugin({
+                terserOptions: {
+                    format: {
+                        comments: false,
+                    },
+                },
+                extractComments: false
+            }),
+        ],
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "./css/[name].min.css"
+            filename: "css/[name].css",
+            chunkFilename: "css/[id].css"
         }),
-        new TerserPlugin(),
+        new RemovePlugin({
+            before: {
+                include: [
+                    './assets/css',
+                    './assets/js'
+                ]
+            },
+        }),
     ],
 };

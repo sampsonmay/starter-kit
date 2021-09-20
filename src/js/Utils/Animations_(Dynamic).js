@@ -1,7 +1,4 @@
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+let gsap, ScrollTrigger;
 
 const batchEnter = (els, opts) => {
     ScrollTrigger.batch(els, {
@@ -56,10 +53,22 @@ export default function Animations() {
     // Check for reduced motion
     if(!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
     
-    // Animations that are set and won't be set again (Not included in callbacks)
-    initAnimations();
+    Promise.all([
+        import(/* webpackExports: ["default"] */ "gsap"),
+        import(/* webpackExports: ["ScrollTrigger"] */ "gsap/scrollTrigger")
+    ]).then(([d, s]) => {
 
-    // Animations that are typically called on page load, and from inside a callback (I.e More results, etc..)
-    callbackAnimations();
+        gsap = d.default;
+        ScrollTrigger = s.ScrollTrigger;
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animations that are set and won't be set again (Not included in callbacks)
+        initAnimations();
+
+        // Watch for scroll triggers
+        callbackAnimations();
+
+    });
     
 }

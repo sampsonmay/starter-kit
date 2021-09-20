@@ -1,7 +1,4 @@
-import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
-Swiper.use([Autoplay, Navigation, Pagination]);
-
-import 'swiper/css';
+let Swiper;
 
 export const Example = () => {
     const swipers = document.querySelectorAll("[data-swiper-example]");
@@ -30,10 +27,15 @@ export const Example = () => {
     });
 }
 
-
 const Carousels = () => {
+    import(/* webpackExports: ["default", "Autoplay", "Naivgation", "Pagination"] */ "swiper").then((module) => {
+        
+        Swiper = module.default;
+        Swiper.use([module.Autoplay, module.Navigation, module.Pagination]);
+        
+        // List of Carousels
+        Example();
 
-    Example();
-    
+    });
 }
 export default Carousels;

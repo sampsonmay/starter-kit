@@ -8,8 +8,18 @@
     <!-- INSERT META PARTIAL HERE -->
     
     <title>Project Title</title>
-    <link rel="stylesheet" href="/assets/css/main.min.css" />
 
+    <link rel="preload" href="/assets/fonts/FONTNAME.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/FONTNAME-BOLD.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link href="assets/css/main.css" rel="stylesheet" media="screen" />
+    
+    <!-- Preload -->
+    <link rel="preload" href="assets/css/modules.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/modules.css">
+    </noscript>
+    
     <script>
         document.getElementsByTagName("html")[0].classList.remove("no-js");
     </script>
@@ -30,9 +40,7 @@
     <!-- End Google Tag Manager (noscript) -->
     
     <div class="wrapper">
-
-       <p>Hello</p>
-
+        <p>Hello.</p>
     </div>
 
     <!-- GRID -->
@@ -121,10 +129,11 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
 
-
-    <script src="assets/js/main.min.js"></script>
+    <script async src="assets/js/vendor.js"></script>
+    <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/modules.js"></script>
 
 </body>
 </html>

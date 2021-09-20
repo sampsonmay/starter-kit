@@ -1,5 +1,4 @@
 const Tables = () => {
-    
     const tables = document.querySelectorAll(".editor table");
     if( tables.length < 1 ) return;
 

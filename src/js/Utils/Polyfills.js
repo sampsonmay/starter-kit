@@ -1,6 +1,6 @@
 const PolyFills = () => {
     
-    // Add any polyfills here...
+    // Apply any pollyfills needed.
 
 };
 
