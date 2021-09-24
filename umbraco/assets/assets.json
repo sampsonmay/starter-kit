@@ -1,0 +1,21 @@
+{
+  "main": {
+    "css": "css/main.33a8c6a1a3a330a70612.css",
+    "js": "js/main.364b9aea58b33fb2e173.js"
+  },
+  "modules": {
+    "css": "css/modules.b7688423a2b524fa25c1.css",
+    "js": "js/modules.81d0ed2b455a3db3caa6.js"
+  },
+  "vendor": {
+    "js": "js/vendor.caec3671cd7dcb067797.js"
+  },
+  "": {
+    "js": [
+      "js/257.c2b5001d87ccc250dfad.js",
+      "js/24.c9b3b891d0d7179b443e.js",
+      "js/214.3862ede38372a9057c95.js",
+      "js/400.277d0daad8041fd204d3.js"
+    ]
+  }
+}

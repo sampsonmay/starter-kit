@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkProjectName=self.webpackChunkProjectName||[]).push([[400],{400:(e,t,c)=>{c.d(t,{default:()=>n});const n=()=>{const e=document.querySelectorAll(".js-cookies-open");for(let t=0;t<e.length;t++)e[t].addEventListener("click",(function(e){e.preventDefault()}))}}}]);

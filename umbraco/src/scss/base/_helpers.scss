@@ -1,0 +1,21 @@
+// Visibility
+.hidden {
+    @include hidden();
+}
+
+.visually-hidden {
+    @include visually-hidden();
+}
+
+
+
+// Animations
+
+    // Batch
+    @media (prefers-reduced-motion: no-preference) {
+        html:not(.no-js) [data-batch] {
+            > * {
+                visibility: hidden;
+            }
+        }
+    }

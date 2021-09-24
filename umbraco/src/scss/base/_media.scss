@@ -1,0 +1,58 @@
+// Media
+svg, img, video, iframe {
+    display: block;
+    max-width: 100%;
+}
+
+iframe, video {
+    border: 0;
+}
+
+
+// Ratios
+.media {
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    &--1-1 {
+        padding-bottom: 100%;
+    }
+
+    &--4-5 {
+        padding-bottom: 125%;
+    }
+
+    &--4-3 {
+        padding-bottom: 75%;
+    }
+
+    &--3-2 {
+        padding-bottom: 66.66%;
+    }
+
+    &--16-9 {
+        padding-bottom: 56.25%;
+    }
+}
+
+// Item
+.media__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        font-family: 'object-fit: cover;';
+    }
+}
+img.media__item {
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+}

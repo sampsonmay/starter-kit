@@ -1,0 +1,20 @@
+// Settings
+@import 'settings/*';
+
+// Critical
+@import 'normalize.css/normalize';
+@import 'critical/webfonts';
+
+// Base
+@import 'base/*';
+
+// Layout
+@import 'layout/*';
+
+// Remove animations
+@media (prefers-reduced-motion) {
+    *, *:before, *:after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

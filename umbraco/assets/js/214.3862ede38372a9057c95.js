@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkProjectName=self.webpackChunkProjectName||[]).push([[214],{214:(e,t,l)=>{l.d(t,{default:()=>a});const a=()=>{const e=document.querySelectorAll(".editor table");if(!(e.length<1))for(let t=0;t<e.length;t++){let l=document.createElement("div");l.classList.add("table"),e[t].parentNode.insertBefore(l,e[t]),l.appendChild(e[t])}}}}]);
