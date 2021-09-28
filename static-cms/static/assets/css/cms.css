@@ -1,0 +1,167 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap);
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.wrapper {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+[data-editor]:hover,
+[data-single]:hover {
+  background-color: #f6f5ee;
+}
+
+.cms,
+.cms-buttons {
+  color: #111;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 24px;
+  line-height: 2.4rem;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+.cms button,
+.cms-buttons button {
+  background: #EEE;
+  border: 0;
+  color: #111;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 16px;
+  line-height: 1.6rem;
+  font-weight: normal;
+  outline: none;
+  margin: 0 10px;
+  padding: 10px 20px;
+  max-width: 250px;
+  text-align: center;
+}
+.cms button:hover, .cms button:focus,
+.cms-buttons button:hover,
+.cms-buttons button:focus {
+  background-color: #DDD;
+}
+.cms button[data-save], .cms button[data-cms-build],
+.cms-buttons button[data-save],
+.cms-buttons button[data-cms-build] {
+  background-color: #58bd66;
+  color: white;
+}
+.cms button[data-save]:hover, .cms button[data-save]:focus, .cms button[data-cms-build]:hover, .cms button[data-cms-build]:focus,
+.cms-buttons button[data-save]:hover,
+.cms-buttons button[data-save]:focus,
+.cms-buttons button[data-cms-build]:hover,
+.cms-buttons button[data-cms-build]:focus {
+  background-color: #4ca357;
+}
+
+.cms {
+  background-color: rgba(255, 255, 255, 0.9);
+  align-items: center;
+  display: none;
+  position: fixed;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+.cms.is-active {
+  display: flex;
+}
+.cms.is-loading .cms__inner:before, .cms.is-loading .cms__inner:after {
+  position: absolute;
+}
+.cms.is-loading .cms__inner:before {
+  background-color: white;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+.cms.is-loading .cms__inner:after {
+  content: "Please wait...";
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: 26px;
+  line-height: 2.6rem;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.cms__inner {
+  background-color: white;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075), 0 2px 2px rgba(0, 0, 0, 0.075), 0 4px 4px rgba(0, 0, 0, 0.075), 0 8px 8px rgba(0, 0, 0, 0.075), 0 16px 16px rgba(0, 0, 0, 0.075);
+  padding: 20px;
+  position: relative;
+  max-width: 100%;
+  width: 700px;
+}
+.cms__inner--editor {
+  width: 900px;
+}
+.cms__inner--editor .tox {
+  height: 70vh !important;
+}
+
+.cms__field + .cms__field {
+  margin-top: 20px;
+}
+.cms__field label {
+  display: block;
+  margin-bottom: 5px;
+}
+.cms__field input[type=text] {
+  background-color: #FAFAFA;
+  border: none;
+  border-bottom: 1px solid #999;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-size: 2.2rem;
+  line-height: 28px;
+  line-height: 2.8rem;
+  outline: none;
+  padding: 20px;
+  width: 100%;
+}
+
+.cms__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.cms__actions button {
+  flex: 1;
+}
+
+.cms__text {
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: 26px;
+  line-height: 2.6rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cms-buttons {
+  background-color: white;
+  border-top: 1px solid black;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+}

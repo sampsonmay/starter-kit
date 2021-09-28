@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title><% if( settings.title ) { %><%= settings.title %> | <% } %><%= title %></title>
+    <meta name="keywords" content="<%= settings.keywords %>">
+    <meta name="description" content="<%= settings.description %>">
+
+    <link rel="preload" href="/assets/fonts/FONTNAME.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/FONTNAME-BOLD.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="/assets/css/cms.css" data-remove />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <!-- Preload -->
+    <link rel="preload" href="assets/css/modules.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/modules.css">
+    </noscript>
+    
+    <link rel="stylesheet" href="/assets/css/tinymce.css" data-remove />
+
+    <script>
+        document.getElementsByTagName("html")[0].classList.remove("no-js");
+    </script>
+</head>
+<body>
+
+    <div class="wrapper">
+        <%- include('../partials/header.ejs') %>
+        <%- include('../partials/navigation.ejs') %>
+        <main class="main" id="content">
+            <%- body %>
+        </main>
+        <%- include('../partials/footer.ejs') %>
+
+        <%- include('../partials/cms.ejs') %>
+    </div>
+
+    <script async src="/assets/js/vendor.js"></script>
+    <script defer src="/assets/js/main.js"></script>
+    <script defer src="/assets/js/modules.js"></script>
+
+    <script defer src="/assets/js/tinymce.js" data-remove></script>
+    <script defer src="/assets/js/cms.js" data-remove></script>
+    
+</body>
+</html>

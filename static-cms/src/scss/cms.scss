@@ -1,0 +1,180 @@
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+// Settings
+@import 'settings/mixins';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+.wrapper {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+// "Hoverable" zones
+[data-editor],
+[data-single] {
+    &:hover {
+        background-color: rgb(246, 245, 238);
+    }
+}
+
+
+// Base
+.cms,
+.cms-buttons {
+    color: #111;
+    @include font-size(16,24);
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    
+    // Buttons
+    button {
+        background: #EEE;
+        border: 0;
+        color: #111;
+        cursor: pointer;
+        font-family: inherit;
+        @include font-size(16,16);
+        font-weight: normal;
+        outline: none;
+        margin: 0 10px;
+        padding: 10px 20px;
+        max-width: 250px;
+        text-align: center;
+
+        &:hover, &:focus {
+            background-color: #DDD;
+        }
+        
+        &[data-save],
+        &[data-cms-build] {
+            background-color: rgb(88, 189, 102);
+            color: white;
+
+            &:hover, &:focus {
+                background-color: rgb(76, 163, 87);
+            }
+        }
+    }
+}
+
+// Overlay
+.cms {
+    background-color: rgba(255,255,255,0.9);
+    align-items: center;
+    display: none;
+    position: fixed;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+
+    // Active CMS
+    &.is-active {
+        display: flex;
+    }
+
+    // Loading CMS
+    &.is-loading .cms__inner {
+        &:before,
+        &:after {
+            position: absolute;
+        }
+        &:before {
+            background-color: white;
+            content: "";
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+        }
+        &:after {
+            content: "Please wait...";
+            @include font-size(20,26);
+            font-weight: bold;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+        }
+    }
+}
+.cms__inner {
+    background-color: white;
+    box-shadow:
+      0 1px 1px hsl(0deg 0% 0% / 0.075),
+      0 2px 2px hsl(0deg 0% 0% / 0.075),
+      0 4px 4px hsl(0deg 0% 0% / 0.075),
+      0 8px 8px hsl(0deg 0% 0% / 0.075),
+      0 16px 16px hsl(0deg 0% 0% / 0.075)
+    ;
+    padding: 20px;
+    position: relative;
+    max-width: 100%;
+    width: 700px;
+
+    // Editor
+    &--editor {
+        width: 900px;
+
+        .tox {
+            height: 70vh !important;
+        }
+    }
+}
+.cms__field {
+
+    & + & {
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type=text] {
+        background-color: #FAFAFA;
+        border: none;
+        border-bottom: 1px solid #999;
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+        @include font-size(22,28);
+        outline: none;
+        padding: 20px;
+        width: 100%;
+    }
+}
+.cms__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    button {
+        flex: 1;
+    }
+}
+.cms__text {
+    @include font-size(20,26);
+    font-weight: bold;
+    text-align: center;
+}
+
+
+// Buttons
+.cms-buttons {
+    background-color: white;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+}
