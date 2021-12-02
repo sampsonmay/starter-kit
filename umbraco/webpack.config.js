@@ -2,7 +2,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 const RemovePlugin = require('remove-files-webpack-plugin');
-const AssetsPlugin = require('assets-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -12,8 +11,8 @@ module.exports = {
         "modules": "./src/js/modules"
     },
     output: {
-        path: path.resolve(__dirname, 'assets'),
-        filename: 'js/[name].[contenthash].js'
+        path: path.resolve(__dirname, 'wwwroot/assets'),
+        filename: 'js/[name].js'
     },
     module: {
         rules: [
@@ -59,26 +58,20 @@ module.exports = {
                 },
                 extractComments: false
             }),
-            new AssetsPlugin({
-                filename: 'assets.json',
-                path: path.resolve(__dirname, 'assets'),
-                prettyPrint: true,
-                removeFullPathAutoPrefix: true,
-            }),
         ],
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "css/[name].[contenthash].css",
+            filename: "css/[name].css",
             chunkFilename: "css/[id].css"
         }),
         new RemovePlugin({
             before: {
                 include: [
-                    './assets/css',
-                    './assets/js'
+                    'wwwroot/assets/css',
+                    'wwwroot/assets/js'
                 ]
-            },
+            }
         }),
     ],
 };

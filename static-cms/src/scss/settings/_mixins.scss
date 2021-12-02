@@ -2,14 +2,14 @@
 
 // Font Size (REM)
 // ----------------------------
-@mixin font-size($size: $base-font-size, $line-height: $base-line-height) {
-    $rem-size: math.div($size,10);
-    font-size: $size + px;
+@mixin font-size($size: $base-font-size, $line-height: $base-line-height, $letterspacing: false) {
+    $rem-size: math.div($size, 10);
     font-size: $rem-size + rem;
-    line-height: $line-height + px;
-    line-height: math.div($line-height,10) + rem;
-}
-
+    line-height: math.div($line-height, 10) + rem;
+    @if $letterspacing {
+        letter-spacing: math.div($letterspacing, $size) + em;
+    }
+} 
 
 // Spacing (EM)
 // ----------------------------
