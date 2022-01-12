@@ -1,11 +1,9 @@
 // Settings
 @import 'settings/*';
 
-// Components
-@import 'components/*';
-
-// Modules
+// Modules that are way below the "page fold"
 @import 'modules/*';
 
-// Pages
-@import 'pages/*';
+// Layout that is not seen
+@import 'layout/navigation';
+@import 'layout/footer';

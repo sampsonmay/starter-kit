@@ -9,7 +9,14 @@
 @import 'base/*';
 
 // Layout
-@import 'layout/*';
+@import 'layout/layout';
+@import 'layout/header';
+
+// Components
+@import 'components/*';
+
+// Pages
+@import 'pages/*';
 
 // Remove animations
 @media (prefers-reduced-motion) {
