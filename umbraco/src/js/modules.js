@@ -5,6 +5,10 @@ import '../scss/modules.scss';
 import Animations from './Utils/Animations';
 
 (function () {
+
+    if(document.querySelector(".swiper-container")) {
+        import(/* webpackExports: ["default"] */ "./Modules/Carousels").then(module => module.default());
+    }
     
     if(document.querySelector(".editor table")) {
         import(/* webpackExports: ["default"] */ "./Modules/Tables").then(module => module.default());

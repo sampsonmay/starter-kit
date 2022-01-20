@@ -15,13 +15,5 @@
 // Components
 @import 'components/*';
 
-// Pages
-@import 'pages/*';
-
-// Remove animations
-@media (prefers-reduced-motion) {
-    *, *:before, *:after {
-        animation: none !important;
-        transition: none !important;
-    }
-}
+// Modules that are way above the "page fold"
+@import 'modules/critical/*';

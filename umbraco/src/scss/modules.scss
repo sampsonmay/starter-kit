@@ -1,8 +1,11 @@
 // Settings
 @import 'settings/*';
 
+// Carousel
+@import 'swiper/scss';
+
 // Modules that are way below the "page fold"
-@import 'modules/*';
+@import 'modules/non-critical/*';
 
 // Layout that is not seen
 @import 'layout/navigation';
