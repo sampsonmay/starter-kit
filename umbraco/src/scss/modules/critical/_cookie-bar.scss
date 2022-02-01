@@ -19,7 +19,7 @@
     }
 
     // Hide
-    &-hide {
+    &.is-hide {
         display: none;
     }
 }
@@ -57,6 +57,10 @@
             }
         }
     }
+}
+
+.cookie-bar__text {
+    // Styles for the text (Links, etc..)
 }
 
 
@@ -113,6 +117,7 @@
         color: inherit;
         cursor: pointer;
         @include font-size(14,18);
+        margin-bottom: 0;
         padding-left: 30px;
         position: relative;
         text-transform: none;

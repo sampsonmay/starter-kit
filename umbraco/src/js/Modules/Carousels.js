@@ -28,7 +28,7 @@ export const Example = () => {
 }
 
 const Carousels = () => {
-    import(/* webpackExports: ["default", "Autoplay", "Naivgation", "Pagination"] */ "swiper").then((module) => {
+    import(/* webpackExports: ["default", "Autoplay", "Navigation", "Pagination"] */ "swiper").then((module) => {
         
         Swiper = module.default;
         Swiper.use([module.Autoplay, module.Navigation, module.Pagination]);
