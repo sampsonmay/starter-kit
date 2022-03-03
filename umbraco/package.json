@@ -7,27 +7,9 @@
     "scripts": {
         "watch": "webpack --watch",
         "build": "webpack --mode=production"
-    },
-    "devDependencies": {
-        "css-loader": "*",
-        "css-minimizer-webpack-plugin": "*",
-        "mini-css-extract-plugin": "*",
-        "remove-files-webpack-plugin": "*",
-        "sass": "*",
-        "sass-bulk-import-loader": "*",
-        "sass-loader": "*",
-        "terser-webpack-plugin": "*",
-        "webpack": "*",
-        "webpack-cli": "*"
-    },
-    "dependencies": {
-        "gsap": "*",
-        "headroom.js": "*",
-        "lodash": "*",
-        "normalize.css": "*",
-        "object-fit-images": "*",
-        "swiper": "*",
-        "url-search-params-polyfill": "*",
-        "whatwg-fetch": "*"
     }
 }
+
+// npm install css-loader css-minimizer-webpack-plugin mini-css-extract-plugin remove-files-webpack-plugin sass sass-bulk-import-loader sass-loader terser-webpack-plugin webpack webpack-cli --save-dev */
+   
+// npm install gsap headroom.js lodash normalize.css object-fit-images swiper url-search-params-polyfill whatwg-fetch
