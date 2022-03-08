@@ -7,8 +7,6 @@ export const Example = () => {
         const swiper = new Swiper(x, {
             speed: 500,
             slidesPerView: 1,
-            slidesPerGroup: 1,
-            watchOverflow: true,
             breakpoints: {
                 768: {
                     slidesPerView: 3,
@@ -21,6 +19,7 @@ export const Example = () => {
             },
             pagination: {
                 el: x.querySelector('.swiper-pagination'),
+                type: 'bullets',
                 clickable: true
             }
         });

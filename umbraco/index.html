@@ -40,7 +40,123 @@
     <!-- End Google Tag Manager (noscript) -->
     
     <div class="wrapper">
-        <p>Hello.</p>
+
+        <!-- SWIPER-->
+        <div class="carousel">
+            <div class="container">
+                <div class="swiper-container" data-swiper-example>
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <img src="https://via.placeholder.com/600/CCCCCC" alt="" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://via.placeholder.com/600/000000" alt="" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://via.placeholder.com/600/EEEEEE" alt="" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://via.placeholder.com/600/CCCCCC" alt="" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://via.placeholder.com/600/000000" alt="" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://via.placeholder.com/600/EEEEEE" alt="" />
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>    
+
+                    <div class="swiper-navigation">
+                        <button class="swiper-button swiper-button-prev" aria-label="Previous">
+                            Previous
+                        </button>
+                        <button class="swiper-button swiper-button-next" aria-label="Next">
+                            Next
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ACCORDION -->
+        <div class="accordion" data-accordion-group>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2" data-batch>
+                        <div class="accordion-block" data-accordion>
+                            <div class="accordion-block__header">
+                                <button data-accordion-toggle>
+                                    <span class="@labelClass">accordion item 1</span>
+                                    <svg><use xlink:href="#arrow-accordion"></use></svg>
+                                </button>
+                            </div>
+                            <div class="accordion-block__body" data-accordion-body>
+                                <div class="accordion-block__body-inner" data-accordion-height>
+                                    <div class="editor editor--accordion">
+                                        accordion item 1 content
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-block" data-accordion>
+                            <div class="accordion-block__header">
+                                <button data-accordion-toggle>
+                                    <span class="@labelClass">accordion item 2</span>
+                                    <svg><use xlink:href="#arrow-accordion"></use></svg>
+                                </button>
+                            </div>
+                            <div class="accordion-block__body" data-accordion-body>
+                                <div class="accordion-block__body-inner" data-accordion-height>
+                                    <div class="editor editor--accordion">
+                                        accordion item 2 content
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-block" data-accordion>
+                            <div class="accordion-block__header">
+                                <button data-accordion-toggle>
+                                    <span class="@labelClass">accordion item 3</span>
+                                    <svg><use xlink:href="#arrow-accordion"></use></svg>
+                                </button>
+                            </div>
+                            <div class="accordion-block__body" data-accordion-body>
+                                <div class="accordion-block__body-inner" data-accordion-height>
+                                    <div class="editor editor--accordion">
+                                        accordion item 3 content
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div> 
+        </div>
+
+        <!-- VIDEO -->
+        <div class="container">    
+            <div class="video-button">
+                <button href="" data-video="https://player.vimeo.com/video/566520248?h=3748c1afd0">Open Video</button>
+            </div>
+            <div class="video">
+                <div class="video__inner">
+                    <div class="video__title">
+                        <h2 class="h3" data-video-mainTitle></h2>
+                        <button class="video__close" data-close-video>
+                            <svg><use xlink:href="#close"></use></svg>
+                        </button>
+                    </div>
+                    <div class="video__player-wrap">
+                        <div class="video__player" data-video-player></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- GRID -->
@@ -63,7 +179,7 @@
         </div>
     </div>
 
-
+    <!-- COOKIE BAR -->
     <div class="cookie-bar">
         <div class="cookie-bar__main">
             <div class="container">

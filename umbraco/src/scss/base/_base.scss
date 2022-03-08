@@ -19,6 +19,12 @@ body {
     color: $default;
     font-family: $font;
     line-height: 1;
+
+    // Remove the scrollbar and make body overflow hidden when certain classes are applied
+    &[class*='oc-'] {
+        height: 100%;
+        overflow: hidden;
+    }
 }
 
 .wrapper {

@@ -1,0 +1,68 @@
+.carousel {
+    margin: 4rem 0;
+}
+
+// Swiper 
+.swiper-container {
+    overflow: hidden;
+}
+
+// Pagination
+.swiper-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.swiper-pagination-bullet {
+    border: 2px solid rgba($default, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 8px;
+    width: 8px;
+    margin: 0 1rem;
+
+    &.swiper-pagination-bullet-active {
+        background-color: $default;
+    }
+}
+
+// Navigation (Seen on Publications)
+.swiper-navigation {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+
+    .swiper-button {
+        align-items: center;
+        color: $default;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        flex: 0 0 25%;
+        padding: 1rem;
+        margin: 0 1rem;
+    
+        svg {
+            height: 24px;
+            width: 46px;
+        }
+    
+        &:hover {
+            background-color: $default;
+            color: white;
+        }
+    }
+    .swiper-button-prev {
+        border-right: 1px solid rgba($default, 0.3);
+    
+        svg {
+            transform: rotate(-180deg);
+        }
+    }
+    .swiper-button-disabled {
+        opacity: 0.3;
+        pointer-events: none;
+    }
+}
+
