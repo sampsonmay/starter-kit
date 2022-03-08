@@ -11,14 +11,6 @@
     }
 } 
 
-// Spacing (EM)
-// ----------------------------
-@function em($pixels, $context: $base-font-size) {
-    $val: math.div($pixels,$context);
-    @return #{$val}em;
-}
-
-
 // Clearfix
 // ----------------------------
 @mixin clearfix() {
