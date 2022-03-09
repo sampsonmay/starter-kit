@@ -12,7 +12,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'wwwroot/assets'),
-        filename: 'js/[name].js'
+        filename: 'js/[name].js',
+        chunkFilename: 'js/[id].[chunkhash].js'
     },
     module: {
         rules: [
