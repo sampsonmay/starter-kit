@@ -1,5 +1,5 @@
 // CSS Import
-import '../scss/style.scss';
+import '../scss/main.scss';
 
 // Polyfills
 import PolyFills from './Utils/Polyfills';

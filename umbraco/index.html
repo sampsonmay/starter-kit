@@ -9,15 +9,15 @@
     
     <title>Project Title</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="/assets/fonts/FONTNAME.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/FONTNAME-BOLD.woff2" as="font" type="font/woff2" crossorigin>
 
-    <link href="assets/css/main.css" rel="stylesheet" media="screen" />
-    
-    <!-- Preload -->
-    <link rel="preload" href="assets/css/modules.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="~/assets/css/main.css" asp-append-version="true">
+    <link rel="preload" href="~/assets/css/modules.css" as="style" onload="this.onload=null;this.rel='stylesheet'" asp-append-version="true">
     <noscript>
-        <link rel="stylesheet" href="assets/css/modules.css">
+        <link rel="stylesheet" href="~/assets/css/modules.css">
     </noscript>
     
     <script>
@@ -249,9 +249,9 @@
         </div>
     </div>
 
-    <script async src="assets/js/vendor.js"></script>
-    <script defer src="assets/js/main.js"></script>
-    <script defer src="assets/js/modules.js"></script>
+    <script async src="/assets/js/vendor.js" asp-append-version="true"></script>
+    <script async src="/assets/js/main.js" asp-append-version="true"></script>
+    <script defer src="/assets/js/modules.js" asp-append-version="true"></script>
 
 </body>
 </html>
