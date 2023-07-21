@@ -1,0 +1,50 @@
+@use "settings" as *;
+
+.swiper {
+    overflow: visible;
+    width: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    height: auto;
+
+    > * {
+        width: 100%;
+    }
+}
+
+
+// Buttons (Navigation)
+.swiper-button {}
+
+
+// Progress bar (Pagination)
+.swiper-progress {
+    background-color: #DDD;
+    height: 5px;
+    position: relative;
+    width: 100%;
+
+    span {
+        background: red;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform-origin: left top;
+        transition: transform .75s ease-in-out !important;
+    }
+}
+
+
+// Pagination
+.swiper-pagination {}
+
+
+// Remove elements
+.swiper-button-lock,
+.swiper-pagination-lock {
+    display: none;
+}

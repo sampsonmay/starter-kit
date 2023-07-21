@@ -1,21 +1,18 @@
-// Settings
-@import 'settings/*';
-
 // Critical
-@import 'normalize.css/normalize';
-@import 'critical/webfonts';
+@use "normalize.css/normalize";
+@use "critical/webfonts";
 
 // Base
-@import 'base/*';
+@use "base";
 
 // Layout
-@import 'layout/layout';
-@import 'layout/header';
-@import 'layout/carousel';
-@import 'layout/video';
+@use "layout";
+
+// Carousel
+@use 'swiper/scss';
 
 // Components
-@import 'components/*';
+@use "components";
 
 // Modules that are way above the "page fold"
-@import 'modules/critical/*';
+@use "modules/critical";

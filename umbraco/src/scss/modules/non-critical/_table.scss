@@ -1,39 +1,58 @@
+@use "settings" as *;
+
 .table {
-    margin-top: 3rem;
-    margin-bottom: 5rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
     overflow-x: auto;
     width: 100%;
 
     table {
         margin-top: 0;
-        min-width: 620px;
+        min-width: 65rem;
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
     }
 }
 
 table {
     border: 0;
-    border-bottom: 1px solid rgba( black,0.3 );
-    border-top: 1px solid rgba( black,0.3 );
     border-spacing: 0;
-    @include font-size( 14,18 );
-    margin-top: 3rem;
+    @include font-size(16,24,-0.4);
+    font-weight: 400;
+    margin-top: 4rem;
     width: 100%;
-}
 
-table tr:nth-child(even) {
     th, td {
-        background-color: #EEE;
+        border: none;
+        padding: 2rem;
     }
 }
 
-table tr th,
-table tr td {
-    border: 0;
-    padding: 1rem 1.5rem;
+
+// Head
+table thead tr td,
+table thead tr th,
+table tr th {
+    background-color: red;
+    color: white;
+    font-weight: 400;
+    @include font-size(14,20);
+    font-weight: 700;
     text-align: left;
+    vertical-align: top;
 }
 
-table tfoot {
-    @include font-size( 12,18 );
-    padding: 2rem 0;
+
+// Body
+table tbody {
+    tr:nth-child(even) td {
+        background-color: #DDD;
+        color: $default;
+    }
 }

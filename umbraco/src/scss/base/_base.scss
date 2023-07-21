@@ -1,3 +1,18 @@
+@use "settings" as *;
+
+:root {
+    --page-width: 128rem;
+    
+    --grid-margins: 2rem;
+    --grid-cols: 6;
+
+    @media screen and ($bp-md) {
+        --grid-margins: 4rem;
+        --grid-cols: 12;
+    }
+}
+
+
 * {
     box-sizing: border-box;
 }
@@ -37,4 +52,11 @@ body {
 
 main {
     flex-grow: 1;
+}
+
+
+// Any element that appears of the page on load, hide it right away to make sure
+// we don't see it flash and transition away.
+.video {
+    display: none;
 }

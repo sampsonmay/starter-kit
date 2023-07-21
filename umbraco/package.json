@@ -10,6 +10,6 @@
     },
     "comments": {
         "devDep": "npm install css-loader css-minimizer-webpack-plugin mini-css-extract-plugin remove-files-webpack-plugin sass sass-bulk-import-loader sass-loader terser-webpack-plugin webpack webpack-cli --save-dev",
-        "Dep": "npm install gsap headroom.js lodash normalize.css object-fit-images swiper url-search-params-polyfill whatwg-fetch @vimeo/player"
+        "Dep": "npm install gsap headroom.js lodash normalize.css swiper @vimeo/player"
     }
 }

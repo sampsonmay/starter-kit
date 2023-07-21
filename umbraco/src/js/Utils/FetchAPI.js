@@ -1,5 +1,3 @@
-import 'whatwg-fetch';
-
 function handleErrors(response) {
     if (!response.ok) {
         throw Error(response.status);

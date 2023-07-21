@@ -10,12 +10,8 @@ import Animations from './Utils/Animations';
         import(/* webpackExports: ["default"] */ "./Modules/Carousels").then(module => module.default());
     }
     
-    if(document.querySelector(".editor table")) {
-        import(/* webpackExports: ["default"] */ "./Modules/Tables").then(module => module.default());
-    }
-    
-    if(document.querySelector(".js-cookies-open")) {
-        import(/* webpackExports: ["default"] */ "./Modules/Cookies").then(module => module.default());
+    if(document.querySelector(".editor")) {
+        import(/* webpackExports: ["default"] */ "./Modules/Editor").then(module => module.default());
     }
 
     if(document.querySelector("[data-video]")) {
