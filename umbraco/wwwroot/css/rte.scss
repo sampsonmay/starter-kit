@@ -1,0 +1,86 @@
+/**umb_name:Title*/
+h2 {
+    font-size: 20px;
+	line-height: 26px;
+}
+
+/**umb_name:Secondary title*/
+h3 {
+    font-size: 20px;
+	line-height: 26px;
+}
+
+/**umb_name:Tertiary title*/
+h4 {
+    font-size: 20px;
+	line-height: 26px;
+}
+
+/**umb_name:Introduction*/
+p.introduction {
+	font-size: 20px;
+	line-height: 26px;
+}
+
+/**umb_name:Footnote*/
+p.footnote {
+	font-size: 12px;
+    line-height: 16px;
+}
+
+
+
+/** Improvements for RTE **/
+
+    /** Figures (with caption) **/
+    figure {
+        margin: 40px 0;
+        padding: 0;
+        position: relative;
+    }
+    figure[style*="text-align: left"] {
+        float: left;
+        margin: 20px 20px 20px 0;
+    }
+    figure[style*="text-align: right"] {
+        float: right;
+        margin: 20px 0 20px 20px;
+    }
+    figure[style*="text-align: left"] img,
+    figure[style*="text-align: right"] img {
+        float: none !important;
+    }
+    figure[style*="text-align: left"] figcaption,
+    figure[style*="text-align: right"] figcaption {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: calc(100% - 30px);
+    }
+    figcaption {
+        background-color: #F6F6F6;
+        padding: 15px;
+        text-align: left;
+    }
+
+
+    /** Images **/
+    img {
+        height: auto !important;
+        max-width: 100%;
+    }
+
+
+    /** Macro styling **/
+    #tinymce.mce-content-body .umb-macro-holder {
+        background-color: #F6F6F6;
+        border-color: #000000;
+        margin: 20px 0;
+        padding: 20px;
+        opacity: 0.7;
+        outline: none; 
+    }
+    #tinymce.mce-content-body .umb-macro-holder[data-mce-selected="1"] {
+        border-style: solid;
+        opacity: 1;
+    }
