@@ -4,6 +4,8 @@ const Editor = () => {
 
     editors.forEach(editor => {
 
+        
+        
         /**
          * Tables
          * Wrap all tables inside of a table class
@@ -17,24 +19,6 @@ const Editor = () => {
                 wrapper.appendChild(tables[i]);
             }
         }
-
-
-        /**
-         * Figures + Captions
-         * Take the width of the image and apply it to the
-         * <figure> element
-         */
-        let figures = editor.querySelectorAll("figure");
-        if(figures) {
-            figures.forEach(x => {
-                let img = x.querySelector("img");
-                let w = img.width;
-
-                x.style.width = w + 'px';
-                
-            });
-        }
-
     });
 
 }

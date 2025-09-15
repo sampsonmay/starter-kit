@@ -1,14 +1,24 @@
-@use "settings" as *;
+@use "../settings" as *;
 
 :root {
-    --page-width: 128rem;
+    --page-width: 160rem;
     
     --grid-margins: 2rem;
     --grid-cols: 6;
+    --grid-gutter: 2rem;
+
+    --module-space: 6rem;
+    --header-height: 7.2rem;
 
     @media screen and ($bp-md) {
         --grid-margins: 4rem;
         --grid-cols: 12;
+
+        --module-space: 8rem;
+    }
+    
+    @media screen and ($bp-xl) {
+        --grid-margins: 8rem;
     }
 }
 
@@ -16,6 +26,7 @@
 * {
     box-sizing: border-box;
 }
+
 
 html,
 body {
@@ -33,30 +44,34 @@ body {
     background-color: white;
     color: $default;
     font-family: $font;
+    font-weight: 300;
     line-height: 1;
 
     // Remove the scrollbar and make body overflow hidden when certain classes are applied
     &[class*='oc-'] {
         height: 100%;
-        overflow: hidden;
+        overflow: clip;
     }
 }
 
-.wrapper {
+.site {
     display: flex;
     flex-direction: column;
     @include font-size();
     min-height: 100%;
     position: relative;
-}
+    width: 100%;
 
-main {
-    flex-grow: 1;
+    > main {
+        flex-grow: 1;
+        width: 100%;
+    }
 }
 
 
 // Any element that appears of the page on load, hide it right away to make sure
 // we don't see it flash and transition away.
-.video {
+.mask,
+.video-overlay {
     display: none;
 }

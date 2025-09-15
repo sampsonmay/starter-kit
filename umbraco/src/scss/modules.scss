@@ -1,6 +1,17 @@
-// Modules that are way below the "page fold"
+// Carousel
+@use 'swiper/css';
+
+// Components
+@use "components";
+
+// Modules that are way ABOVE the "page fold"
+@use "modules/critical";
+
+// Modules that are way BELOW the "page fold"
 @use 'modules/non-critical';
 
+// Pages
 @use 'pages';
 
-@forward 'layout/video';
+// Hidden Layouts
+// @forward 'layout/video';

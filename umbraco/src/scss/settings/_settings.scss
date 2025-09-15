@@ -1,15 +1,15 @@
 // Colours
 // ----------------------------
-$default: #111;
+$default: #000;
 
 
 // Fonts
 // ----------------------------
-$base-font-size:    14;
-$base-line-height:  22;
+$base-font-size:    18;
+$base-line-height:  24;
 
 // Families
-$font: "Open Sans", Helvetica, Arial, sans-serif;
+$font: "MuseoSans", Helvetica, Arial, sans-serif;
 
 
 // Breakpoints
@@ -17,13 +17,13 @@ $font: "Open Sans", Helvetica, Arial, sans-serif;
 $bp-sm: "min-width: 480px";
     $bp-sm-max: "max-width: 479px";
 
-$bp-md: "min-width: 700px";
-    $bp-md-max: "max-width: 699px";
+$bp-md: "min-width: 768px";
+    $bp-md-max: "max-width: 767px";
 
-$bp-lg: "min-width: 1000px";
-    $bp-lg-max: "max-width: 999px";
+$bp-lg: "min-width: 1024px";
+    $bp-lg-max: "max-width: 1023px";
 
 $bp-xl: "min-width: 1300px";
     $bp-xl-max: "max-width: 1299px";
 
-$bp-max: "min-width: 1600px";
+$bp-max: "min-width: 1600px"; 

@@ -1,4 +1,4 @@
-@use "settings" as *;
+@use "../settings" as *;
 
 
 // Visibility
@@ -11,14 +11,12 @@
 }
 
 
-
 // Animations
-
-    // Batch
-    @media (prefers-reduced-motion: no-preference) {
-        html:not(.no-js) [data-batch] {
-            > * {
-                visibility: hidden;
-            }
+@media (scripting: enabled) {
+    html:not(.no-js) {
+        [data-batch] > *,
+        [data-block] > * {
+            visibility: hidden;
         }
     }
+}

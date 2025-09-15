@@ -1,11 +1,10 @@
-@use "settings" as *;
+@use "../settings" as *;
 
 .container {
     margin: 0 auto;
     min-width: 36rem;
     padding-left: var(--grid-margins);
     padding-right: var(--grid-margins);
-    position: relative;
     max-width: calc(var(--page-width) + calc(var(--grid-margins) * 2));
     width: 100%;
 }
